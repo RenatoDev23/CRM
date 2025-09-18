@@ -3,6 +3,8 @@ package com.CRM.minicrm.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -32,6 +34,7 @@ public class Cliente {
 	private String email;
 	
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true,  fetch = FetchType.EAGER)
+	@JsonManagedReference
 	private List<Contato> contatos = new ArrayList<>();
 
 }
