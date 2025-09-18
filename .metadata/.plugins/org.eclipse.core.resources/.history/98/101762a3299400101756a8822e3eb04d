@@ -1,0 +1,5 @@
+package com.CRM.minicrm.repository;
+
+public class ContatoRepository {
+
+}

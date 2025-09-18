@@ -1,0 +1,37 @@
+package com.CRM.minicrm.controller;
+
+import java.net.URI;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.CRM.minicrm.model.Cliente;
+import com.CRM.minicrm.repository.ClienteRepository;
+import com.CRM.minicrm.repository.ContatoRepository;
+
+@RestController
+@RequestMapping("/clientes")
+public class ClienteController {
+	
+	
+	private final ClienteRepository clienteRepository;
+	private final ContatoRepository contatoRepository;
+	
+	public ClienteController(ClienteRepository clienteRepository, ContatoRepository contatoRepository) {
+		
+		this.clienteRepository = clienteRepository;
+		this.contatoRepository = contatoRepository;
+	}
+	
+	public ResponseEntity<Cliente> criarCliente(@RequestBody Cliente payload){
+		Cliente cliente = clienteRepository.save(payload);
+		return ResponseEntity.created(URI.create("/criente/" + cliente.getId())).body(cliente);
+		
+	}
+	
+	
+	
+
+}
