@@ -1,0 +1,5 @@
+package com.CRM.minicrm.model;
+
+public class Cliente {
+
+}
