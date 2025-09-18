@@ -1,5 +1,4 @@
 # 🏢 Mini CRM
-<img alt="SITE DE" src="foto.jpg">
 
 <h1 align="center">📊 Sistema de Gestão de Clientes</h1>
 
